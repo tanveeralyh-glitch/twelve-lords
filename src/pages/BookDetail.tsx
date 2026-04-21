@@ -14,6 +14,11 @@ import {
   Star
 } from "lucide-react";
 import { useEffect } from "react";
+import { SocialActions } from "@/components/SocialActions";
+import { useCommerce } from "@/context/CommerceContext";
+import { ShoppingCart } from "lucide-react";
+
+
 
 const bookData = {
   title: "THE SELF AS WITNESS",
@@ -45,6 +50,18 @@ const bookData = {
 };
 
 const BookDetail = () => {
+  const { addToCart, isInCart } = useCommerce();
+
+  const product = {
+    id: "book-self-as-witness-001",
+    name: "THE SELF AS WITNESS (Hardcover)",
+    price: "$45.00",
+    type: "book" as const,
+    image: "/book-main.png"
+  };
+
+  const inCart = isInCart(product.id);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -116,7 +133,12 @@ const BookDetail = () => {
                   </div>
                   <div className="text-[10px] text-white/40 uppercase font-black tracking-widest">Published</div>
                 </div>
+                
+                <div className="h-8 w-px bg-white/10 hidden md:block" />
+                <SocialActions className="hidden sm:flex" product={product} />
               </motion.div>
+
+
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -183,12 +205,27 @@ const BookDetail = () => {
                     <ShieldCheck className="h-4 w-4" /> SECURE ACCESS GRANTED
                   </div>
                 </div>
-                <button className="w-full py-4 rounded-xl bg-accent text-accent-foreground font-black uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all shadow-accent-glow">
-                  Secure Your Copy
+                <button 
+                  onClick={() => addToCart(product)}
+                  className={`w-full py-4 rounded-xl font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${
+                    inCart 
+                      ? "bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 cursor-default" 
+                      : "bg-accent text-accent-foreground shadow-accent-glow hover:scale-[1.02] active:scale-[0.98]"
+                  }`}
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  {inCart ? "In Your Cart" : "Secure Your Copy"}
                 </button>
-                <div className="text-center">
-                  <p className="text-[10px] text-white/20 font-medium">Digital & Hardcover formats supported</p>
+                
+                <div className="pt-6 border-t border-white/10">
+                   <SocialActions align="center" className="w-full" product={product} />
                 </div>
+
+
+                <div className="text-center">
+                   <p className="text-[10px] text-white/20 font-medium">Digital & Hardcover formats supported</p>
+                </div>
+
               </div>
 
               {/* Quote card */}

@@ -12,30 +12,35 @@ import ArticleDetail from "./pages/ArticleDetail.tsx";
 import BookDetail from "./pages/BookDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop";
+import { CommerceProvider } from "./context/CommerceContext";
+import { CommerceInterface } from "./components/CommerceInterface";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <ThemeProvider>
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/tech" element={<TechPage />} />
-          <Route path="/articles/:slug" element={<ArticleDetail />} />
-          <Route path="/book" element={<BookDetail />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+    <CommerceProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <CommerceInterface />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/tech" element={<TechPage />} />
+              <Route path="/articles/:slug" element={<ArticleDetail />} />
+              <Route path="/book" element={<BookDetail />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </CommerceProvider>
   </ThemeProvider>
 );
 

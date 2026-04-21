@@ -13,8 +13,12 @@ import {
   Cpu, 
   Layers, 
   Fingerprint,
-  Info
+  Info,
+  ShoppingCart,
+  Heart
 } from "lucide-react";
+import { useCommerce } from "@/context/CommerceContext";
+
 
 // The Cyber Cable Hero Image
 const cyberCableImg = "/cyber-cable.png";
@@ -78,6 +82,19 @@ const architectureItems = [
 ];
 
 const TechPage = () => {
+  const { addToCart, isInCart, addToWishlist, removeFromWishlist, isInWishlist } = useCommerce();
+
+  const product = {
+    id: "cyber-cable-001",
+    name: "Twelve Lords Cyber Cable",
+    price: "$129.00",
+    type: "tech" as const,
+    image: cyberCableImg
+  };
+
+  const inCart = isInCart(product.id);
+  const inWishlist = isInWishlist(product.id);
+
   return (
     <div className="min-h-screen bg-[#020204] text-white overflow-x-hidden font-inter">
       <Navbar />
@@ -106,6 +123,33 @@ const TechPage = () => {
               <p className="text-xl font-medium text-white/60 leading-relaxed max-w-lg">
                 Secure Charging. Controlled Data. Total Protection.
               </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <button
+                  onClick={() => addToCart(product)}
+                  className={`flex items-center gap-2 px-8 py-4 rounded-xl font-black uppercase tracking-widest transition-all ${
+                    inCart 
+                      ? "bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 cursor-default" 
+                      : "bg-accent text-accent-foreground shadow-accent-glow hover:scale-[1.02] active:scale-[0.98]"
+                  }`}
+                >
+                  <ShoppingCart className="h-5 w-5" />
+                  {inCart ? "In Your Cart" : "Add to Cart"}
+                </button>
+                
+                <button
+                  onClick={() => inWishlist ? removeFromWishlist(product.id) : addToWishlist(product)}
+                  className={`flex items-center gap-2 px-8 py-4 rounded-xl border font-black uppercase tracking-widest transition-all ${
+                    inWishlist
+                      ? "bg-accent/10 border-accent/30 text-accent"
+                      : "bg-white/5 border-white/10 text-white/60 hover:border-white/20 hover:text-white"
+                  }`}
+                >
+                  <Heart className={`h-5 w-5 ${inWishlist ? "fill-accent" : ""}`} />
+                  {inWishlist ? "Saved" : "Wishlist"}
+                </button>
+              </div>
+
 
               <div className="flex items-center gap-6 pt-4 border-t border-white/5">
                 <div className="flex flex-col">

@@ -5,6 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Calendar, Clock, User, ArrowLeft, Share2, MessageSquare } from "lucide-react";
 import { CyberIllustration } from "@/components/CyberIllustration";
+import { SocialActions } from "@/components/SocialActions";
+
 
 const articleContent = {
   title: "As Cyber Threats Accelerate, Human Awareness Remains the Critical Weakness",
@@ -107,11 +109,12 @@ const articleContent = {
 const ArticleDetail = () => {
   const { slug } = useParams();
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const articleProduct = {
+    id: `article-${slug}`,
+    name: articleContent.title,
+    price: "Article",
+    type: "article" as const,
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -178,7 +181,12 @@ const ArticleDetail = () => {
                   {articleContent.readTime} reading
                 </div>
               </div>
+
+              <div className="h-4 w-px bg-white/10 hidden md:block" />
+              <SocialActions className="hidden sm:flex" product={articleProduct} />
             </motion.div>
+
+
           </header>
 
           {/* Hero Image / Placeholder */}
@@ -249,23 +257,26 @@ const ArticleDetail = () => {
             <motion.div
                initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
-               className="pt-12 mt-12 border-t border-border flex flex-col md:flex-row items-center justify-between gap-8"
+               className="pt-12 mt-12 border-t border-border flex flex-col items-center gap-8"
             >
-                <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-bold hover:scale-105 transition-transform">
-                        <Share2 className="h-4 w-4" /> Share Article
-                    </button>
-                    <button className="flex items-center gap-2 px-6 py-3 rounded-full glass font-bold hover:bg-white/10 transition-colors">
-                        <MessageSquare className="h-4 w-4" /> Discussion
-                    </button>
+                <div className="text-center space-y-2 mb-4">
+                  <h3 className="text-xl font-bold uppercase tracking-widest italic">Support this publication</h3>
+                  <p className="text-sm text-white/40">If you found this technical analysis insightful, consider sharing it.</p>
                 </div>
-                <Link
-                    to="/contact"
-                    className="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-4"
-                >
-                    Contact the Author →
-                </Link>
+                
+                <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8">
+                    <SocialActions align="center" className="w-full md:w-auto" product={articleProduct} />
+                    <div className="flex items-center gap-4">
+                        <Link
+                            to="/contact"
+                            className="px-6 py-2.5 rounded-full glass text-sm font-bold text-accent border border-accent/20 hover:bg-accent/10 transition-all"
+                        >
+                            Contact the Author →
+                        </Link>
+                    </div>
+                </div>
             </motion.div>
+
           </div>
         </article>
       </main>
