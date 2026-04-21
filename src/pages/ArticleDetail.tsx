@@ -109,6 +109,12 @@ const articleContent = {
 const ArticleDetail = () => {
   const { slug } = useParams();
   const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const articleProduct = {
     id: `article-${slug}`,
     name: articleContent.title,
