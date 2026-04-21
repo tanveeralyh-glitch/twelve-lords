@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import logoImg from "@/assets/logo.png";
 
 export const Logo = () => (
-  <Link to="/" className="flex items-center group relative h-14 md:h-16 py-1.5">
-    <div className="relative h-full flex items-center justify-center px-10">
+  <Link to="/" className="flex items-center group relative h-16 md:h-20 py-2">
+    <div className="relative h-full flex items-center justify-center px-12">
       {/* Outer rotating dashed ring */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 h-24 rounded-full border-[1.5px] border-dashed border-accent/40 animate-[spin_10s_linear_infinite] group-hover:border-accent/90 transition-colors duration-500 opacity-30 group-hover:opacity-100" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 h-32 rounded-full border-[1.5px] border-dashed border-accent/40 animate-[spin_10s_linear_infinite] group-hover:border-accent/90 transition-colors duration-500 opacity-30 group-hover:opacity-100" />
       
       {/* Inner slow rotating ring */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 md:w-16 h-16 rounded-full border border-accent/20 animate-[spin_6s_linear_reverse_infinite]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-24 h-24 rounded-full border border-accent/20 animate-[spin_6s_linear_reverse_infinite]" />
 
       {/* Actual Logo Image with continuous rotation and fixed professional size */}
       <motion.div
@@ -26,7 +26,7 @@ export const Logo = () => (
           transition={{ 
             filter: { duration: 2, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="h-9 w-9 md:h-10 md:w-10 object-contain scale-[2.8] md:scale-[3] transition-transform duration-500" 
+          className="h-10 w-10 md:h-12 md:w-12 object-contain scale-[3.2] md:scale-[3.8] transition-transform duration-500" 
         />
       </motion.div>
     </div>
