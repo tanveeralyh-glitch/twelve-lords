@@ -40,11 +40,11 @@ export const Navbar = () => {
               : "bg-background/20 border border-white/5"
           }`}
         >
-          {/* Top row: logo centered, actions on the right */}
-          <div className="relative flex items-center justify-center">
+          {/* Top row: logo on the left, actions on the right */}
+          <div className="flex items-center justify-between">
             <Logo />
 
-            <div className="absolute right-0 flex items-center gap-2 md:gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <motion.div
                 className="rounded-full"
                 animate={{ 

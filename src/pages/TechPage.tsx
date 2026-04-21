@@ -172,12 +172,12 @@ const TechPage = () => {
               className="relative w-full max-w-2xl mx-auto lg:ml-auto"
             >
               <div className="absolute inset-0 bg-accent/20 blur-[160px] rounded-full opacity-40 animate-pulse" />
-              <div className="relative rounded-[3rem] overflow-hidden border border-white/10 bg-black/40 backdrop-blur-3xl shadow-[0_0_50px_rgba(239,80,80,0.15)] group">
+              <div className="relative rounded-[3rem] overflow-hidden border border-white/10 bg-black/40 backdrop-blur-3xl shadow-[0_0_50px_rgba(239,80,80,0.15)] group aspect-[4/3] md:aspect-auto">
                  <div className="absolute inset-0 scan-line z-20 pointer-events-none" />
                  <img 
                     src={cyberCableImg} 
                     alt="Twelve Lords Cyber Cable" 
-                    className="w-full h-auto p-4 md:p-8 group-hover:scale-110 transition-transform duration-[3s] ease-out"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[3s] ease-out"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                  />
                  {/* Product Info Overlays */}
