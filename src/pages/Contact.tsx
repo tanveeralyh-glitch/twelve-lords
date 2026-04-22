@@ -59,7 +59,7 @@ const Contact = () => {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 className="group relative"
               >
-                <div className="glass rounded-3xl p-8 h-full space-y-6 flex flex-col border border-white/5 group-hover:border-accent/20 transition-all duration-500 overflow-hidden">
+                <div className="glass rounded-3xl p-8 h-full space-y-6 flex flex-col border border-border/50 group-hover:border-accent/20 transition-all duration-500 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
                   <div className="h-14 w-14 rounded-2xl bg-accent/10 text-accent flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform duration-500">

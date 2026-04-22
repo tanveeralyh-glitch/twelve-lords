@@ -29,15 +29,15 @@ export const Navbar = () => {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-0.5" : "py-1"
+        scrolled ? "py-0" : "py-0.5"
       }`}
     >
       <div className="container-tight">
         <nav
-          className={`relative rounded-2xl px-4 md:px-6 py-1 transition-all duration-500 backdrop-blur-xl ${
+          className={`relative rounded-xl px-4 md:px-5 py-1 transition-all duration-500 backdrop-blur-xl ${
             scrolled
-              ? "glass shadow-glass border border-white/10"
-              : "bg-background/20 border border-white/5"
+              ? "bg-black/95 shadow-glass border border-white/10"
+              : "bg-black/80 border border-white/5"
           }`}
         >
           {/* Top row: logo on the left, actions on the right */}
@@ -45,34 +45,25 @@ export const Navbar = () => {
             <Logo />
 
             <div className="flex items-center gap-2 md:gap-3">
-              <motion.div
-                className="rounded-full"
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                  boxShadow: ["0 0 20px rgba(239,80,80,0.3)", "0 0 35px rgba(239,80,80,0.6)", "0 0 20px rgba(239,80,80,0.3)"]
-                }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              <Link
+                to="/#articles"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-accent text-accent-foreground px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all duration-300"
               >
-                <Link
-                  to="/#articles"
-                  className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-accent text-accent-foreground px-5 py-2.5 text-sm font-semibold shadow-accent-glow hover:scale-105 hover:bg-accent/90 transition-all duration-300"
-                >
-                  Explore <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </motion.div>
+                Explore
+              </Link>
               <ThemeToggle />
               <button
-                className="lg:hidden h-10 w-10 rounded-full border border-border flex items-center justify-center"
+                className="lg:hidden h-8 w-8 rounded-full border border-white/20 flex items-center justify-center text-white"
                 onClick={() => setOpen(!open)}
                 aria-label="Menu"
               >
-                {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </button>
             </div>
           </div>
 
           {/* Bottom row: nav links below logo */}
-          <ul className="hidden lg:flex items-center justify-center gap-2 mt-1.5 pt-1.5 border-t border-white/10">
+          <ul className="hidden lg:flex items-center justify-center gap-1 mt-0.5 pt-0.5 border-t border-white/10">
             {links.map((l) => (
               <li key={l.href}>
                 <Link
@@ -82,10 +73,10 @@ export const Navbar = () => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
-                  className="relative px-4 py-1.5 text-sm font-medium uppercase tracking-wide text-foreground/80 hover:text-foreground transition-colors group"
+                  className="relative px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-white/80 hover:text-accent transition-colors group"
                 >
                   {l.label}
-                  <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                  <span className="absolute left-3 right-3 -bottom-0.5 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                 </Link>
               </li>
             ))}

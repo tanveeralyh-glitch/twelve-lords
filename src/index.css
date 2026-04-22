@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,61 +6,64 @@
 
 /* Inkwell — Premium Article Publishing Design System
    All colors HSL. Tokens drive every visual decision.
+   Primary Font: Norton Sans (Custom Brand Font)
+   Web-Safe Alternative: Inter (Used for modern, sharp edges and professional look)
+   Weights: Headings 600 (Semi-Bold), Body 400 (Regular)
 */
 
 @layer base {
   :root {
-    --background: 40 33% 98%;
-    --foreground: 0 0% 8%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 0 0% 8%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 10% 94%;
-    --secondary-foreground: 0 0% 12%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 30 10% 94%;
+    --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 358 85% 58%;
-    --accent-foreground: 0 0% 100%;
-    --accent-glow: 358 100% 65%;
+    --accent: 41 98% 53%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 41 100% 60%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 88%;
     --input: 0 0% 92%;
-    --ring: 358 85% 58%;
+    --ring: 41 98% 53%;
 
     --radius: 0.75rem;
 
     /* Surfaces */
     --surface: 0 0% 100%;
     --surface-elevated: 0 0% 100%;
-    --footer: 0 0% 8%;
-    --footer-foreground: 0 0% 88%;
+    --footer: 0 0% 5%;
+    --footer-foreground: 0 0% 90%;
 
     /* Gradients */
-    --gradient-accent: linear-gradient(135deg, hsl(358 85% 58%), hsl(20 90% 55%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 0% / 0.2), hsl(0 0% 0% / 0.7));
-    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(358 85% 58% / 0.15), transparent 60%);
+    --gradient-accent: linear-gradient(135deg, hsl(41 98% 53%), hsl(35 100% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 0% / 0.1), hsl(0 0% 0% / 0.6));
+    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(41 98% 53% / 0.15), transparent 60%);
 
     /* Shadows */
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.08);
-    --shadow-card-hover: 0 20px 50px -12px hsl(0 0% 0% / 0.18);
-    --shadow-accent: 0 10px 40px -10px hsl(358 85% 58% / 0.5);
-    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.05);
+    --shadow-card-hover: 0 20px 50px -12px hsl(0 0% 0% / 0.1);
+    --shadow-accent: 0 10px 40px -10px hsl(41 98% 53% / 0.4);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.05);
 
     /* Glass */
-    --glass-bg: 0 0% 100% / 0.6;
-    --glass-border: 0 0% 100% / 0.3;
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 0% / 0.05;
 
     /* Transitions */
     --t-smooth: cubic-bezier(0.22, 1, 0.36, 1);
@@ -97,29 +100,29 @@
     --muted: 222 20% 13%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 358 90% 62%;
-    --accent-foreground: 0 0% 100%;
-    --accent-glow: 358 100% 70%;
+    --accent: 41 98% 53%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 41 100% 60%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 222 20% 16%;
     --input: 222 20% 14%;
-    --ring: 358 90% 62%;
+    --ring: 41 98% 53%;
 
     --surface: 222 25% 9%;
     --surface-elevated: 222 22% 12%;
     --footer: 222 35% 4%;
     --footer-foreground: 0 0% 75%;
 
-    --gradient-accent: linear-gradient(135deg, hsl(358 90% 62%), hsl(15 95% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(41 98% 53%), hsl(35 100% 50%));
     --gradient-hero: linear-gradient(180deg, hsl(222 40% 4% / 0.4), hsl(222 40% 4% / 0.85));
-    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(358 90% 62% / 0.25), transparent 60%);
+    --gradient-radial: radial-gradient(circle at 50% 0%, hsl(41 98% 53% / 0.25), transparent 60%);
 
     --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
-    --shadow-card-hover: 0 25px 60px -10px hsl(358 90% 62% / 0.25);
-    --shadow-accent: 0 10px 40px -10px hsl(358 90% 62% / 0.6);
+    --shadow-card-hover: 0 25px 60px -10px hsl(41 98% 53% / 0.25);
+    --shadow-accent: 0 10px 40px -10px hsl(41 98% 53% / 0.6);
     --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.4);
 
     --glass-bg: 222 25% 12% / 0.6;
@@ -139,12 +142,20 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
     transition: background-color 0.5s var(--t-smooth), color 0.5s var(--t-smooth);
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Poppins', 'Inter', sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     @apply tracking-tight;
+  }
+
+  .font-display {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
   }
 
   .font-tech {
@@ -186,6 +197,14 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground transition-all duration-300;
+  }
+  .btn-accent:hover {
+    background-color: hsl(43 100% 45%);
+    @apply scale-[1.02] shadow-lg;
   }
 
   .reveal {
@@ -250,5 +269,30 @@
   .tech-bracket-br::before {
     border-bottom: 2px solid hsl(var(--accent) / 0.7);
     border-right: 2px solid hsl(var(--accent) / 0.7);
+  }
+
+  /* Article Section Utilities */
+  .article-container {
+    @apply max-w-[720px] mx-auto px-6;
+  }
+
+  .hero-hook-title {
+    @apply text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tighter mb-8;
+  }
+
+  .quick-insight-block {
+    @apply text-xl md:text-2xl font-medium leading-relaxed border-l-[6px] border-accent pl-10 py-4 my-20 relative bg-accent/5 rounded-r-2xl;
+  }
+
+  .highlight-card {
+    @apply glass p-12 rounded-[2.5rem] border-accent/20 relative overflow-hidden my-20 shadow-2xl;
+  }
+
+  .research-block {
+    @apply bg-secondary/50 p-8 rounded-2xl border border-border/50 my-12;
+  }
+
+  .quote-section {
+    @apply text-3xl md:text-5xl font-bold text-center italic leading-tight py-20 px-10;
   }
 }

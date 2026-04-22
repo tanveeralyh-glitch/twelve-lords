@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
-import { Twitter, Github, Instagram, Linkedin, Send } from "lucide-react";
+import { Facebook, Instagram, Music, Send } from "lucide-react";
 
 const social = [
-  { icon: Twitter, href: "#" },
-  { icon: Github, href: "#" },
-  { icon: Instagram, href: "#" },
-  { icon: Linkedin, href: "#" },
+  { icon: Instagram, href: "https://www.instagram.com/twelvelords?igsh=cDRtcjl1emMyeGc%3D&utm_source=qr" },
+  { icon: Facebook, href: "https://www.facebook.com/share/1CRfTGwmLb/?mibextid=wwXIfr" },
+  { icon: Music, href: "https://www.tiktok.com/@twelvelords?_r=1&_t=ZN-95kXwF9qnsk" },
 ];
 
 const footerLinks = [
@@ -49,7 +48,8 @@ export const Footer = () => {
           <div className="lg:col-span-5">
             <Logo />
             <p className="mt-5 text-sm text-footer-foreground/70 max-w-sm leading-relaxed">
-              A modern publishing platform for thinkers, writers and creators. Beautiful by design, fast by default.
+              A systems-first platform for knowledge, security, and the future of human development. 
+              Beautiful by design, secure by default.
             </p>
 
             <form
@@ -93,7 +93,7 @@ export const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs text-footer-foreground/60">
-            © {new Date().getFullYear()} Inkwell. Crafted for storytellers.
+            © {new Date().getFullYear()} Twelve Lords. Strengthening the mind and modern digital life.
           </p>
           <div className="flex items-center gap-2">
             {social.map((s, i) => (

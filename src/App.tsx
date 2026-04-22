@@ -8,8 +8,7 @@ import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
 import TechPage from "./pages/TechPage.tsx";
-import ArticleDetail from "./pages/ArticleDetail.tsx";
-import BookDetail from "./pages/BookDetail.tsx";
+import ContentDetail from "./pages/ContentDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop";
 import { CommerceProvider } from "./context/CommerceContext";
@@ -32,8 +31,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/tech" element={<TechPage />} />
-              <Route path="/articles/:slug" element={<ArticleDetail />} />
-              <Route path="/book" element={<BookDetail />} />
+              <Route path="/content/:slug" element={<ContentDetail />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -82,7 +82,7 @@ const About = () => {
                    <div className="p-12 h-full flex flex-col justify-center gap-8">
                         <div className="flex gap-4">
                             {[1, 2, 3].map(i => (
-                                <div key={i} className="h-16 w-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                <div key={i} className="h-16 w-16 rounded-2xl bg-secondary border border-border/20 flex items-center justify-center">
                                     {i === 1 && <Cpu className="h-8 w-8 text-accent" />}
                                     {i === 2 && <Shield className="h-8 w-8 text-accent" />}
                                     {i === 3 && <div className="h-2 w-8 bg-accent/40 rounded-full" />}
@@ -90,9 +90,9 @@ const About = () => {
                             ))}
                         </div>
                         <div className="space-y-4">
-                            <div className="h-3 w-48 bg-white/10 rounded-full" />
-                            <div className="h-3 w-32 bg-white/10 rounded-full" />
-                            <div className="h-3 w-40 bg-white/10 rounded-full" />
+                             <div className="h-3 w-48 bg-secondary/50 rounded-full" />
+                             <div className="h-3 w-32 bg-secondary/50 rounded-full" />
+                             <div className="h-3 w-40 bg-secondary/50 rounded-full" />
                         </div>
                    </div>
                 </motion.div>

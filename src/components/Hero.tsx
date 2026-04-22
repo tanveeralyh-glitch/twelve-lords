@@ -1,29 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
-const heroVideo = "/videos/hero-tech-v2.mp4";
+import { CyberGrid } from "./CyberGrid";
 
 export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 bg-black"
     >
-      {/* Cinematic background video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          onError={(e) => console.error("Hero video failed to load", e)}
-          className="absolute inset-0 w-full h-full object-cover scale-105"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/80" />
-      </div>
+      <CyberGrid />
 
       {/* Floating orbs */}
       <div className="absolute top-1/4 left-10 h-72 w-72 rounded-full bg-accent/30 blur-[120px] animate-float" />

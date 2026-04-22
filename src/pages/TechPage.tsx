@@ -21,7 +21,7 @@ import { useCommerce } from "@/context/CommerceContext";
 
 
 // The Cyber Cable Hero Image
-const cyberCableImg = "/cyber-cable.png";
+const cyberCableImg = "/cyber-cable-new.png";
 
 const threats = [
   {
@@ -96,7 +96,7 @@ const TechPage = () => {
   const inWishlist = isInWishlist(product.id);
 
   return (
-    <div className="min-h-screen bg-[#020204] text-white overflow-x-hidden font-inter">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-inter transition-colors duration-500">
       <Navbar />
       
       <main className="pt-32">
@@ -120,7 +120,7 @@ const TechPage = () => {
                 </h1>
               </div>
 
-              <p className="text-xl font-medium text-white/60 leading-relaxed max-w-lg">
+              <p className="text-xl font-medium text-muted-foreground leading-relaxed max-w-lg">
                 Secure Charging. Controlled Data. Total Protection.
               </p>
 
@@ -130,7 +130,7 @@ const TechPage = () => {
                   className={`flex items-center gap-2 px-8 py-4 rounded-xl font-black uppercase tracking-widest transition-all ${
                     inCart 
                       ? "bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 cursor-default" 
-                      : "bg-accent text-accent-foreground shadow-accent-glow hover:scale-[1.02] active:scale-[0.98]"
+                      : "btn-accent shadow-accent-glow"
                   }`}
                 >
                   <ShoppingCart className="h-5 w-5" />
@@ -154,12 +154,12 @@ const TechPage = () => {
               <div className="flex items-center gap-6 pt-4 border-t border-white/5">
                 <div className="flex flex-col">
                   <span className="font-tech text-[11px] text-accent font-bold tracking-widest uppercase">Encryption Type</span>
-                  <span className="text-sm font-medium text-white/40">Physical Isolation</span>
+                  <span className="text-sm font-medium text-muted-foreground">Physical Isolation</span>
                 </div>
-                <div className="h-8 w-px bg-white/10" />
+                <div className="h-8 w-px bg-border/20" />
                 <div className="flex flex-col">
                   <span className="font-tech text-[11px] text-accent font-bold tracking-widest uppercase">Security Level</span>
-                  <span className="text-sm font-medium text-white/40">Hardware-Enforced</span>
+                  <span className="text-sm font-medium text-muted-foreground">Hardware-Enforced</span>
                 </div>
               </div>
             </motion.div>
@@ -201,13 +201,13 @@ const TechPage = () => {
                 className="space-y-6"
               >
                  <span className="font-tech text-xs font-black text-accent uppercase tracking-[0.4em]">Technology Hub</span>
-                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">Introduction — <br/>Our Technology</h2>
-                 <p className="text-lg text-white/50 leading-relaxed max-w-xl">
+                 <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground tracking-tight">Introduction — <br/>Our Technology</h2>
+                 <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                     Conventional cables allow unrestricted power and data flow, exposing devices to potential threats the moment they 
                     are plugged into an unknown source. The Cyber Cable introduces a hardware-enforced security architecture that separates 
                     charging from data communication, ensuring that your device only exchanges data when explicitly authorized.
                  </p>
-                 <div className="p-6 rounded-2xl glass border border-white/10 text-white/80 italic font-medium">
+                 <div className="p-6 rounded-2xl glass border border-white/10 text-foreground/80 italic font-medium">
                     "This approach transforms a simple accessory into a controlled security interface."
                  </div>
               </motion.div>
@@ -219,13 +219,13 @@ const TechPage = () => {
                 transition={{ delay: 0.2 }}
                 className="space-y-6"
               >
-                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">Development <br/>Philosophy</h2>
-                 <p className="text-lg text-white/50 leading-relaxed max-w-xl">
+                 <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground tracking-tight">Development <br/>Philosophy</h2>
+                 <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                     The Cyber Cable was developed by a team of cybersecurity engineers and hardware specialists focused on real-world 
                     attack vectors affecting everyday users. Through analysis of public charging environments such as airports, hotels, 
                     and shared workspaces, we identified a consistent risk: devices are vulnerable at the point of connection.
                  </p>
-                 <p className="text-lg text-white/50 leading-relaxed max-w-xl">
+                 <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
                     To address this, we engineered a cable that enforces security at the physical layer. By controlling internal data pathways, 
                     the Cyber Cable eliminates unauthorized communication at the source.
                  </p>
@@ -256,13 +256,13 @@ const TechPage = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="p-8 rounded-3xl glass border border-white/5 hover:border-accent/40 transition-all duration-500 group"
+                    className="p-8 rounded-3xl glass border border-border/10 hover:border-accent/40 transition-all duration-500 group"
                   >
-                     <div className="h-14 w-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                     <div className="h-14 w-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-500">
                         <threat.icon className="h-6 w-6" />
                      </div>
                      <h3 className="text-xl font-bold mb-4 uppercase tracking-wider">{threat.title}</h3>
-                     <p className="text-white/40 leading-relaxed text-sm">{threat.desc}</p>
+                     <p className="text-muted-foreground leading-relaxed text-sm">{threat.desc}</p>
                   </motion.div>
                 ))}
              </div>
@@ -270,7 +270,7 @@ const TechPage = () => {
              <div className="p-8 rounded-3xl bg-accent/5 border border-accent/10 flex flex-col items-center justify-center text-center space-y-4 max-w-3xl mx-auto">
                  <Info className="h-5 w-5 text-accent" />
                  <p className="text-accent/80 font-tech text-[10px] uppercase font-black tracking-[0.3em]">Critical Exposure Alert</p>
-                 <p className="text-sm text-white/60">
+                 <p className="text-sm text-muted-foreground/80">
                     These threats are most commonly encountered in environments such as airports, hotels, cafés, and other public or shared charging locations.
                  </p>
              </div>
@@ -278,7 +278,7 @@ const TechPage = () => {
         </section>
 
         {/* SECURE DESIGN ARCHITECTURE */}
-        <section className="py-32 bg-[#050508] border-y border-white/5">
+        <section className="py-32 bg-secondary/10 border-y border-border/50">
            <div className="container-tight grid lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-10">
                  <motion.h2
@@ -289,7 +289,7 @@ const TechPage = () => {
                  >
                     Secure Design <br/> <span className="text-gradient-accent">Architecture</span>
                  </motion.h2>
-                 <p className="text-white/50 text-lg">
+                 <p className="text-muted-foreground text-lg">
                     The Cyber Cable is engineered with a hardware-level control mechanism that governs data transmission independently of power delivery.
                  </p>
                  <div className="space-y-6">
@@ -302,12 +302,12 @@ const TechPage = () => {
                         transition={{ delay: i * 0.1 }}
                         className="flex gap-6 group"
                       >
-                         <div className="shrink-0 h-14 w-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-all">
+                         <div className="shrink-0 h-14 w-14 rounded-2xl bg-secondary border border-border/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all">
                             <item.icon className="h-6 w-6" />
                          </div>
                          <div>
                             <h4 className="text-lg font-bold mb-1 uppercase tracking-tight">{item.title}</h4>
-                            <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                            <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                          </div>
                       </motion.div>
                     ))}
@@ -318,28 +318,28 @@ const TechPage = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative p-12 glass rounded-[3rem] border border-white/10 space-y-8 overflow-hidden"
+                className="relative p-12 glass rounded-[3rem] border border-border/20 space-y-8 overflow-hidden"
               >
                   <div className="absolute top-0 right-0 p-8 opacity-5">
                       <Layers className="h-40 w-40" />
                   </div>
-                  <h3 className="text-2xl font-tech font-black uppercase italic tracking-widest">Hardware Layer Enforcement</h3>
+                  <h3 className="text-2xl font-tech font-black uppercase italic tracking-widest text-foreground">Hardware Layer Enforcement</h3>
                   <div className="space-y-6 relative z-10">
-                      <p className="text-white/60 leading-relaxed italic">
+                      <p className="text-muted-foreground leading-relaxed italic">
                         "By keeping data pathways inactive unless required, the cable significantly reduces exposure to USB-based threats."
                       </p>
-                      <div className="flex items-center gap-4 py-4 border-y border-white/5 uppercase">
-                         <div className="text-center flex-1">
-                            <div className="font-tech text-accent text-[10px] font-black mb-1 tracking-widest">DEFAULT</div>
-                            <div className="text-xs font-bold text-white/50">PROTECTED</div>
-                         </div>
-                         <div className="h-10 w-px bg-white/10" />
-                         <div className="text-center flex-1">
-                            <div className="font-tech text-accent text-[10px] font-black mb-1 tracking-widest">STATUS</div>
-                            <div className="text-xs font-bold text-white/50">SHIELDED</div>
-                         </div>
-                      </div>
-                      <p className="text-[11px] text-white/30 uppercase tracking-widest leading-loose">
+                       <div className="flex items-center gap-4 py-4 border-y border-border/20 uppercase">
+                          <div className="text-center flex-1">
+                             <div className="font-tech text-accent text-[10px] font-black mb-1 tracking-widest">DEFAULT</div>
+                             <div className="text-xs font-bold text-muted-foreground/50">PROTECTED</div>
+                          </div>
+                          <div className="h-10 w-px bg-border/10" />
+                          <div className="text-center flex-1">
+                             <div className="font-tech text-accent text-[10px] font-black mb-1 tracking-widest">STATUS</div>
+                             <div className="text-xs font-bold text-muted-foreground/50">SHIELDED</div>
+                          </div>
+                       </div>
+                      <p className="text-[11px] text-muted-foreground/40 uppercase tracking-widest leading-loose">
                         Absence of an active data channel prevents any attempt at communication, eliminating the possibility of unauthorized access.
                       </p>
                   </div>
@@ -351,7 +351,7 @@ const TechPage = () => {
         <section className="py-32 bg-background">
           <div className="container-tight">
              <div className="mb-16">
-                <h2 className="text-3xl font-tech font-black uppercase italic tracking-widest mb-2">Product Specifications</h2>
+                <h2 className="text-3xl font-tech font-black uppercase italic tracking-widest mb-2 text-foreground">Product Specifications</h2>
                 <div className="h-1 w-20 bg-accent" />
              </div>
 
@@ -359,7 +359,7 @@ const TechPage = () => {
                 <div className="grid md:grid-cols-2 gap-y-12 gap-x-16">
                    <div>
                       <h4 className="font-tech text-xs font-black text-accent uppercase tracking-[0.3em] mb-4">Cable Variants</h4>
-                      <ul className="space-y-2 text-white/60 font-medium">
+                      <ul className="space-y-2 text-muted-foreground font-medium">
                          <li>• USB-A to Lightning</li>
                          <li>• USB-A to USB-C</li>
                          <li>• USB-C to Lightning</li>
@@ -368,7 +368,7 @@ const TechPage = () => {
                    </div>
                    <div>
                       <h4 className="font-tech text-xs font-black text-accent uppercase tracking-[0.3em] mb-4">Power Delivery</h4>
-                      <ul className="space-y-2 text-white/60 font-medium">
+                      <ul className="space-y-2 text-muted-foreground font-medium">
                          <li>• Up to 60W fast charging</li>
                          <li>• Smartphone / Tablet / Laptop support</li>
                          <li>• Smart current management</li>
@@ -376,7 +376,7 @@ const TechPage = () => {
                    </div>
                    <div>
                       <h4 className="font-tech text-xs font-black text-accent uppercase tracking-[0.3em] mb-4">Build Quality</h4>
-                      <ul className="space-y-2 text-white/60 font-medium">
+                      <ul className="space-y-2 text-muted-foreground font-medium">
                          <li>• Reinforced Armor Structure</li>
                          <li>• High-quality internal shielding</li>
                          <li>• Military-grade durability</li>
@@ -384,7 +384,7 @@ const TechPage = () => {
                    </div>
                    <div>
                       <h4 className="font-tech text-xs font-black text-accent uppercase tracking-[0.3em] mb-4">Configurations</h4>
-                      <ul className="space-y-2 text-white/60 font-medium">
+                      <ul className="space-y-2 text-muted-foreground font-medium">
                          <li>• Length: 1 meter / 2 meters</li>
                          <li>• Colors: Midnight Black / Polar White</li>
                          <li>• Warranty: Limited Lifetime</li>
@@ -393,30 +393,32 @@ const TechPage = () => {
                 </div>
 
                 <div className="space-y-8">
-                   <div className="p-8 rounded-3xl glass border border-white/10 space-y-6">
+                   <div className="p-8 rounded-3xl glass border border-border space-y-6">
                       <h4 className="font-tech text-xs font-black text-accent uppercase tracking-widest mb-4">Operational Modes</h4>
                       <div className="space-y-4">
                          <div className="flex gap-4">
                             <div className="shrink-0 h-10 w-10 rounded-xl bg-accent text-accent-foreground flex items-center justify-center font-black text-xs">C</div>
                             <div>
-                               <div className="font-bold text-sm uppercase">Charge-Only (Default)</div>
-                               <div className="text-xs text-white/40">Data disabled, power enabled.</div>
+                               <div className="font-bold text-sm uppercase text-foreground">Charge-Only (Default)</div>
+                               <div className="text-xs text-muted-foreground/60">Data disabled, power enabled.</div>
                             </div>
                          </div>
-                         <div className="flex gap-4">
-                            <div className="shrink-0 h-10 w-10 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center font-black text-xs">D</div>
+                         <div className="flex gap-4 group">
+                            <div className="shrink-0 h-10 w-10 rounded-xl bg-secondary border border-border/20 text-accent flex items-center justify-center font-black text-xs">D</div>
                             <div>
-                               <div className="font-bold text-sm uppercase">Data Mode (User-Controlled)</div>
-                               <div className="text-xs text-white/40">Temporary enabled for trusted links.</div>
+                               <div className="text-xs font-bold uppercase tracking-tight mb-0.5 text-foreground">Data Mode</div>
+                               <div className="text-xs text-muted-foreground/60">Temporary enabled for trusted links.</div>
                             </div>
                          </div>
                       </div>
                    </div>
-                   <div className="p-8 rounded-3xl bg-secondary/30 border border-white/5">
-                       <Battery className="h-6 w-6 text-accent mb-4" />
-                       <p className="text-sm font-medium text-white/60 leading-relaxed uppercase">
+                   <div className="p-8 rounded-3xl bg-secondary/30 border border-border/20">
+                      <div className="flex flex-col gap-6">
+                       <Battery className="h-6 w-6 text-accent" />
+                       <p className="text-sm font-medium text-muted-foreground/80 leading-relaxed uppercase">
                           The Twelve Lords Cyber Cable is a security-focused connectivity solution designed to protect devices at the hardware level.
                        </p>
+                      </div>
                    </div>
                 </div>
              </div>
@@ -433,10 +435,10 @@ const TechPage = () => {
                 className="max-w-5xl mx-auto space-y-12"
               >
                   <div className="inline-block p-4 glass rounded-full px-8 text-accent font-tech text-xs font-black uppercase tracking-[0.5em] border border-accent/20">十二位領主 | Hardware-Level Protection</div>
-                  <h2 className="text-3xl md:text-5xl font-tech font-black uppercase tracking-tighter italic leading-snug">
+                  <h2 className="text-3xl md:text-5xl font-tech font-black uppercase tracking-tighter italic leading-snug text-foreground">
                      "BY SEPARATING POWER FROM DATA AND INTRODUCING CONTROLLED COMMUNICATION, IT ELIMINATES UNNECESSARY EXPOSURE."
                   </h2>
-                  <p className="font-tech text-[10px] text-white/30 uppercase tracking-[1em] pb-10">— Twelve Lords Positioning Statement</p>
+                  <p className="font-tech text-[10px] text-muted-foreground/40 uppercase tracking-[1em] pb-10">- Twelve Lords Positioning Statement</p>
               </motion.div>
            </div>
         </section>
